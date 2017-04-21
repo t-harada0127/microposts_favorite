@@ -45,7 +45,7 @@ class User < ApplicationRecord
     favorite.destroy if favorite
   end
 
-  def favoritelist?(other_post)
+  def favo?(other_post)
     self.followings.include?(other_user)
   end
 end
