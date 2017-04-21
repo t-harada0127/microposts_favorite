@@ -12,7 +12,7 @@
 " alt="">
       </div>
     </div>
-
+    
 <%= render 'relationships/follow_button', user: @user %>
 
   </aside>
@@ -26,40 +26,38 @@ Microposts <span class="badge">
 <%= @count_microposts %>
 </span>
 <% end %>
-      </li>
+</li>
       <li class="
-	<%= 'active' if current_page?(followings_user_path(@user)) %>
+<%= 'active' if current_page?(followings_user_path(@user)) %>
 ">
-	<%= link_to followings_user_path(@user) do %>
-	  Followings 
-	  <span class="badge">
-	    <%= @count_followings %>
-	  </span>
-	<% end %>
-      </li>
+<%= link_to followings_user_path(@user) do %>
+Followings <span class="badge">
+<%= @count_followings %>
+</span>
+<% end %>
+</li>
       <li class="
-	<%= 'active' if current_page?(followers_user_path(@user)) %>
+<%= 'active' if current_page?(followers_user_path(@user)) %>
 ">
-	<%= link_to followers_user_path(@user) do %>
-	  Followers 
-	  <span class="badge">
-	    <%= @count_followers %>
-	  </span>
-	<% end %>
-      </li>
+<%= link_to followers_user_path(@user) do %>
+Followers <span class="badge">
+<%= @count_followers %>
+</span>
+<% end %>
+</li>
       <li class="
-	<%= 'active' if current_page?(favorites_user_path(@user)) %>
+<%= 'active' if current_page?(favorites_user_path(@user)) %>
 ">
-	<%= link_to favorites_user_path(@user) do %>
-	  Favorites
-	  <span class="badge">
-	    <%= @count_favorites %>
-	  </span>
-	<% end %>
-      </li>
-    </ul>
+<%= link_to favorites_user_path(@user) do %>
+Favorites <span class="badge">
+<%= @count_favorites %>
+</span>
+<% end %>
+</li>
 
-<%= render 'microposts/microposts', microposts: @microposts, user: @user %>
+    </ul>
+    
+<%= render 'microposts/microposts', microposts: @favorites, user: @user %>
 
 
   </div>
